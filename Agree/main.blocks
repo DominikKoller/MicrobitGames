@@ -1,0 +1,140 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="7{)1wtdM2k?T|5#,+bVW">allAgree</variable>
+    <variable type="" id="LpI)f;omwQ4HK[ZCK]Q#">value</variable>
+  </variables>
+  <block type="device_gesture_event" x="20" y="20">
+    <field name="NAME">Gesture.Shake</field>
+    <statement name="HANDLER">
+      <block type="set_status">
+        <value name="s">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="basic_show_icon">
+            <field name="i">IconNames.Diamond</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="device_button_event" x="286" y="20">
+    <field name="NAME">Button.A</field>
+    <statement name="HANDLER">
+      <block type="set_status">
+        <value name="s">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="basic_show_icon">
+            <field name="i">IconNames.LeftTriangle</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="device_forever" x="554" y="20">
+    <statement name="HANDLER">
+      <block type="variables_set">
+        <field name="VAR" id="7{)1wtdM2k?T|5#,+bVW" variabletype="">allAgree</field>
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="logic_boolean">
+            <field name="BOOL">TRUE</field>
+          </block>
+        </value>
+        <next>
+          <block type="pxt_controls_for_of">
+            <value name="VAR">
+              <shadow type="variables_get_reporter">
+                <field name="VAR" id="LpI)f;omwQ4HK[ZCK]Q#" variabletype="">value</field>
+              </shadow>
+            </value>
+            <value name="LIST">
+              <block type="all_party_members"></block>
+            </value>
+            <statement name="DO">
+              <block type="controls_if">
+                <value name="IF0">
+                  <shadow type="logic_boolean">
+                    <field name="BOOL">TRUE</field>
+                  </shadow>
+                  <block type="logic_compare">
+                    <field name="OP">NEQ</field>
+                    <value name="A">
+                      <shadow type="math_number">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="status_of">
+                        <value name="member">
+                          <block type="variables_get">
+                            <field name="VAR" id="LpI)f;omwQ4HK[ZCK]Q#" variabletype="">value</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="get_status"></block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="variables_set">
+                    <field name="VAR" id="7{)1wtdM2k?T|5#,+bVW" variabletype="">allAgree</field>
+                    <value name="VALUE">
+                      <shadow type="math_number">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="logic_boolean">
+                        <field name="BOOL">FALSE</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if">
+                <value name="IF0">
+                  <shadow type="logic_boolean">
+                    <field name="BOOL">TRUE</field>
+                  </shadow>
+                  <block type="variables_get">
+                    <field name="VAR" id="7{)1wtdM2k?T|5#,+bVW" variabletype="">allAgree</field>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="device_pause">
+                    <value name="pause">
+                      <shadow type="timePicker">
+                        <field name="ms">1000</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="device_print_message">
+                        <value name="text">
+                          <shadow type="text">
+                            <field name="TEXT">you WON</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

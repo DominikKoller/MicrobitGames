@@ -1,0 +1,119 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables></variables>
+  <block type="device_gesture_event" x="295" y="0">
+    <field name="NAME">Gesture.Shake</field>
+    <statement name="HANDLER">
+      <block type="controls_if">
+        <value name="IF0">
+          <shadow type="logic_boolean">
+            <field name="BOOL">TRUE</field>
+          </shadow>
+          <block type="logic_compare">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="get_status"></block>
+            </value>
+            <value name="B">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="party_unicast_string">
+            <value name="message">
+              <shadow type="text">
+                <field name="TEXT">DUCK</field>
+              </shadow>
+            </value>
+            <value name="destAddress">
+              <block type="random_party_member"></block>
+            </value>
+            <next>
+              <block type="set_status">
+                <value name="s">
+                  <shadow type="math_number">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="device_clear_display"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="device_button_event" x="0" y="36">
+    <field name="NAME">Button.AB</field>
+    <statement name="HANDLER">
+      <block type="set_status">
+        <value name="s">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="basic_show_icon">
+            <field name="i">IconNames.Duck</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="party_on_string" x="729" y="0">
+    <value name="HANDLER_DRAG_PARAM_receivedString">
+      <shadow type="argument_reporter_string">
+        <field name="VALUE">receivedString</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="controls_if">
+        <value name="IF0">
+          <shadow type="logic_boolean">
+            <field name="BOOL">TRUE</field>
+          </shadow>
+          <block type="logic_compare">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="argument_reporter_string">
+                <field name="VALUE">receivedString</field>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="text">
+                <field name="TEXT">DUCK</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="set_status">
+            <value name="s">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="basic_show_icon">
+                <field name="i">IconNames.Duck</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
