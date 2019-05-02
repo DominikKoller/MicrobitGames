@@ -1,6 +1,6 @@
 input.onButtonPressed(Button.AB, function () {
     parties.broadcastNumber(0)
-    parties.setStatus(2)
+    parties.setStatus(Math.randomRange(1, 3))
 })
 parties.onNumberReceived(function (receivedNumber) {
     parties.setStatus(receivedNumber)

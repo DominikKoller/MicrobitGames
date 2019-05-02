@@ -3,7 +3,7 @@
     <variable type="" id="7{)1wtdM2k?T|5#,+bVW">allAgree</variable>
     <variable type="" id="LpI)f;omwQ4HK[ZCK]Q#">value</variable>
   </variables>
-  <block type="device_gesture_event" x="20" y="20">
+  <block type="device_gesture_event" x="-25" y="-11">
     <field name="NAME">Gesture.Shake</field>
     <statement name="HANDLER">
       <block type="set_status">
@@ -20,7 +20,7 @@
       </block>
     </statement>
   </block>
-  <block type="device_button_event" x="286" y="20">
+  <block type="device_button_event" x="266" y="0">
     <field name="NAME">Button.A</field>
     <statement name="HANDLER">
       <block type="set_status">
@@ -37,7 +37,7 @@
       </block>
     </statement>
   </block>
-  <block type="device_forever" x="554" y="20">
+  <block type="device_forever" x="534" y="0">
     <statement name="HANDLER">
       <block type="variables_set">
         <field name="VAR" id="7{)1wtdM2k?T|5#,+bVW" variabletype="">allAgree</field>
@@ -132,6 +132,57 @@
                 </statement>
               </block>
             </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="device_gesture_event" x="-23" y="191">
+    <field name="NAME">Gesture.ScreenDown</field>
+    <statement name="HANDLER">
+      <block type="set_status">
+        <value name="s">
+          <shadow type="math_number">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="basic_show_icon">
+            <field name="i">IconNames.Fabulous</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="device_button_event" x="270" y="210">
+    <field name="NAME">Button.B</field>
+    <statement name="HANDLER">
+      <block type="set_status">
+        <value name="s">
+          <shadow type="math_number">
+            <field name="NUM">3</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="basic_show_icon">
+            <field name="i">IconNames.SmallDiamond</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="device_button_event" x="270" y="422">
+    <field name="NAME">Button.AB</field>
+    <statement name="HANDLER">
+      <block type="set_status">
+        <value name="s">
+          <shadow type="math_number">
+            <field name="NUM">4</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="basic_show_icon">
+            <field name="i">IconNames.StickFigure</field>
           </block>
         </next>
       </block>

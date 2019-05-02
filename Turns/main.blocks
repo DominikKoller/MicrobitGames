@@ -99,7 +99,7 @@
       </block>
     </statement>
   </block>
-  <block type="device_button_event" x="524" y="38">
+  <block type="device_button_event" x="523" y="62">
     <field name="NAME">Button.AB</field>
     <statement name="HANDLER">
       <block type="party_broadcast_number">
@@ -111,16 +111,28 @@
         <next>
           <block type="set_status">
             <value name="s">
-              <shadow type="math_number">
+              <shadow type="math_number" id="J^S#t|XLh7mo$q`xy=+0">
                 <field name="NUM">2</field>
               </shadow>
+              <block type="device_random">
+                <value name="min">
+                  <shadow type="math_number">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="limit">
+                  <shadow type="math_number">
+                    <field name="NUM">3</field>
+                  </shadow>
+                </value>
+              </block>
             </value>
           </block>
         </next>
       </block>
     </statement>
   </block>
-  <block type="party_on_number" x="928" y="82">
+  <block type="party_on_number" x="991" y="65">
     <value name="HANDLER_DRAG_PARAM_receivedNo">
       <shadow type="argument_reporter_number">
         <field name="VALUE">receivedNumber</field>
@@ -136,7 +148,7 @@
       </block>
     </statement>
   </block>
-  <block type="device_gesture_event" x="526" y="253">
+  <block type="device_gesture_event" x="528" y="274">
     <field name="NAME">Gesture.Shake</field>
     <statement name="HANDLER">
       <block type="controls_if">
@@ -195,7 +207,7 @@
       </block>
     </statement>
   </block>
-  <block type="device_button_event" x="527" y="568">
+  <block type="device_button_event" x="522" y="571">
     <field name="NAME">Button.A</field>
     <statement name="HANDLER">
       <block type="controls_if">
@@ -254,7 +266,7 @@
       </block>
     </statement>
   </block>
-  <block type="device_button_event" x="533" y="861">
+  <block type="device_button_event" x="524" y="873">
     <field name="NAME">Button.B</field>
     <statement name="HANDLER">
       <block type="controls_if">
