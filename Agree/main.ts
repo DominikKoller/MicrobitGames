@@ -1,5 +1,5 @@
 let allAgree = false
-input.onGesture(Gesture.Shake, function () {
+input.onGesture(Gesture.SixG, function () {
     parties.setStatus(0)
     basic.showIcon(IconNames.Diamond)
 })
